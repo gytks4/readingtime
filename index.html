@@ -1,302 +1,298 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>발표시간 계산기, 글자수 세기</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>발표시간 계산기, 글자수 세기</title>
 
-        <!-- 검색엔진 -->
-        <meta
-            name="keywords"
-            content="발표시간 계산기, 글자수세기, 단어수세기, PT시간 측정"
-        />
-        <meta
-            name="description"
-            content='여러분의 발표/PT가 몇 분 걸리는지 궁금하다면? 텍스트를 넣으면 "대본/PT/발표시간", 글자수, 단어수를 계산합니다.'
-        />
-        <!-- 네이버 SEO -->
-        <meta
-            name="naver-site-verification"
-            content="0ce0c7312843df52707cb7943660d1ea1b5c8a5c"
-        />
-        <link rel="canonical" href="https://presentationtime.netlify.app" />
-        <!-- Open Graph -->
-        <meta property="og:title" content="발표시간 계산기, 글자수 세기" />
-        <meta
-            property="og:description"
-            content="PT가 몇 분 걸리는지 궁금하다면?"
-        />
-        <meta property="og:image" content="imgs/readingTime_logo4.png" />
-        <meta
-            property="og:url"
-            content="https://presentationtime.netlify.app"
-        />
+    <!-- 검색엔진 -->
+    <meta
+      name="keywords"
+      content="발표시간 계산기, 글자수세기, 단어수세기, PT시간 측정"
+    />
+    <meta
+      name="description"
+      content='여러분의 발표/PT가 몇 분 걸리는지 궁금하다면? 텍스트를 넣으면 "대본/PT/발표시간", 글자수, 단어수를 계산합니다.'
+    />
+    <!-- 네이버 SEO -->
+    <meta
+      name="naver-site-verification"
+      content="0ce0c7312843df52707cb7943660d1ea1b5c8a5c"
+    />
+    <link rel="canonical" href="https://presentationtime.netlify.app" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="발표시간 계산기, 글자수 세기" />
+    <meta property="og:description" content="PT가 몇 분 걸리는지 궁금하다면?" />
+    <meta property="og:image" content="imgs/readingTime_logo4.png" />
+    <meta property="og:url" content="https://presentationtime.netlify.app" />
 
-        <meta name="author" content="김의진" />
-        <!-- UTF 8 로 설정 -->
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <!-- 구글에서 색인화, 링크연결하도록 -->
-        <meta
-            name="google-site-verification"
-            content="JHUCo9mGvBm8ZBcUzAswjKW12a25BhWXzRidUhx5dVs"
-        />
-        <meta name="robots" content="index, follow" />
+    <meta name="author" content="김의진" />
+    <!-- UTF 8 로 설정 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 구글에서 색인화, 링크연결하도록 -->
+    <meta
+      name="google-site-verification"
+      content="JHUCo9mGvBm8ZBcUzAswjKW12a25BhWXzRidUhx5dVs"
+    />
+    <meta name="robots" content="index, follow" />
 
-        <!-- fontawesome 주소를 달아준다 -->
-        <script
-            src="https://kit.fontawesome.com/76cfe4f16b.js"
-            crossorigin="anonymous"
-        ></script>
-        <!-- fontgoogle 주소를 달아준다 + CSS font-family: "Open Sans", sans-serif;-->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- 사이트의 icon -->
-        <link rel="icon" type="image/png" href="imgs/readingTime_logo4.png" />
-        <!-- css link 연결 -->
-        <link rel="stylesheet" href="style.css" />
-        <!-- js script 연결 -->
-        <script src="src/main.js" defer></script>
+    <!-- fontawesome 주소를 달아준다 -->
+    <script
+      src="https://kit.fontawesome.com/76cfe4f16b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontgoogle 주소를 달아준다 + CSS font-family: "Open Sans", sans-serif;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 사이트의 icon -->
+    <link rel="icon" type="image/png" href="imgs/readingTime_logo4.png" />
+    <!-- css link 연결 -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- js script 연결 -->
+    <script src="src/main.js" defer></script>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-VPQ3BBXLWS"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VPQ3BBXLWS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'G-VPQ3BBXLWS');
-        </script>
-        <!-- Ad sense 애드 센스 코드 -->
-        <script
-            data-ad-client="ca-pub-2291941429982946"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-    </head>
+      gtag("config", "G-VPQ3BBXLWS");
+    </script>
+    <!-- Ad sense 애드 센스 코드 -->
+    <script
+      data-ad-client="ca-pub-2291941429982946"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+  </head>
 
-    <body>
-        <!-- title -->
-        <div class="title">
-            <i><img src="imgs/readingTime_logo4.png" alt="" /> </i>
-            <h1>발표시간 계산기</h1>
-        </div>
+  <body>
+    <!-- title -->
+    <div class="title">
+      <i><img src="imgs/readingTime_logo4.png" alt="" /> </i>
+      <h1>발표시간 계산기</h1>
+    </div>
 
-        <div class="languageContainer">
-            <span>Language :&nbsp;</span>
-            <select class="language" name="language">
-                <option value="" selected>Korean</option>
-                <option value="en">English</option>
-            </select>
-        </div>
-        <!-- main -->
-        <section id="main">
-            <!-- word/character counter -->
-            <table class="counter">
-                <tr>
-                    <td>글자수(공백 포함)</td>
-                    <td>글자수(공백 미포함)</td>
-                    <td>단어수</td>
-                </tr>
-                <tr>
-                    <td><span class="lengthWblank">0 자 / 0 Byte</span></td>
-                    <td><span class="lengthWOblank">0 자 / 0 Byte</span></td>
-                    <td><span class="words">0 개</span></td>
-                </tr>
-            </table>
-            <!-- textInput -->
-            <textarea
-                placeholder=" ⦁ 스크립트를 입력하면 글자수, 단어수, 리딩타임을 측정합니다.&#13;&#10;
+    <div class="languageContainer">
+      <span>Language :&nbsp;</span>
+      <select class="language" name="language">
+        <option value="" selected>Korean</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <!-- main -->
+    <section id="main">
+      <!-- word/character counter -->
+      <table class="counter">
+        <tr>
+          <td>글자수(공백 포함)</td>
+          <td>글자수(공백 미포함)</td>
+          <td>단어수</td>
+        </tr>
+        <tr>
+          <td><span class="lengthWblank">0 자 / 0 Byte</span></td>
+          <td><span class="lengthWOblank">0 자 / 0 Byte</span></td>
+          <td><span class="words">0 개</span></td>
+        </tr>
+      </table>
+      <!-- textInput -->
+      <textarea
+        placeholder=" ⦁ 스크립트를 입력하면 글자수, 단어수, 리딩타임을 측정합니다.&#13;&#10;
  ⦁ Internet Explore 환경은 지원하지 않습니다."
-                class="textInput"
-            ></textarea>
-            <!-- PT time  -->
-            <table class="counter">
-                <tr>
-                    <td class="tdReadingTime">PT Time</td>
-                    <td class="readingTimeBox">
-                        <span class="readingTime">0초</span
-                        ><span class="cpm2"></span>
-                    </td>
-                </tr>
-            </table>
+        class="textInput"
+      ></textarea>
+      <!-- PT time  -->
+      <table class="counter">
+        <tr>
+          <td class="tdReadingTime">PT Time</td>
+          <td class="readingTimeBox">
+            <span class="readingTime">0초</span><span class="cpm2"></span>
+          </td>
+        </tr>
+      </table>
 
-            <p class="subtitle">PT Time 세부조정</p>
-            <!-- <p class="paragraph">보다 정확하게 측정하고 싶다면, Customize를 이용하세요.</p> -->
+      <p class="subtitle">PT Time 세부조정</p>
+      <!-- <p class="paragraph">보다 정확하게 측정하고 싶다면, Customize를 이용하세요.</p> -->
 
-            <div class="readingTimeContainer">
-                <!-- 간편 모드 -->
-                <div class="sliderContainer">
-                    <div class="radioBox">
-                        <input
-                            type="radio"
-                            name="checking"
-                            id="sliderRadio"
-                            checked
-                            value="slider"
-                        />
-                        <label for="sliderRadio">간편 모드</label>
-                    </div>
-                    <p class="paragraph">
-                        1. 좌우 스크롤하면, 해당 속도에 맞춰 PT Time을
-                        계산합니다.<br />
-                        2. 자신의 <strong>말하기 속도</strong>와 문장/PPT 사이의
-                        <strong>쉼</strong>을 고려합니다.
-                    </p>
+      <div class="readingTimeContainer">
+        <!-- 간편 모드 -->
+        <div class="sliderContainer">
+          <div class="radioBox">
+            <input
+              type="radio"
+              name="checking"
+              id="sliderRadio"
+              checked
+              value="slider"
+            />
+            <label for="sliderRadio">간편 모드</label>
+          </div>
+          <p class="paragraph">
+            1. 좌우 스크롤하면, 해당 속도에 맞춰 PT Time을 계산합니다.<br />
+            2. 자신의 <strong>말하기 속도</strong>와 문장/PPT 사이의
+            <strong>쉼</strong>을 고려합니다.
+          </p>
 
-                    <!-- <br/>(스크롤하여 속도를 조절해주세요.) -->
-                    <div class="box1">
-                        <p>Slow Fast</p>
-                        <input
-                            type="range"
-                            min="310"
-                            max="550"
-                            value="430"
-                            step="10"
-                            class="slider"
-                            id="myRange"
-                            list="tickmarks"
-                        />
-                        <p class="cpm">430 CPM (Characters Per Minute)</p>
-                    </div>
-                    <table class="cpmText">
-                        <tr>
-                            <td>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong
-                                    >~390</strong
-                                >
-                            </td>
-                            <td>느린 말하기 and 쉼이 긴 말하기</td>
-                        </tr>
-                        <tr>
-                            <td><strong>390~419</strong></td>
-                            <td>느린 말하기 or 쉼이긴 말하기</td>
-                        </tr>
-                        <tr>
-                            <td><strong>420~449</strong></td>
-                            <td>보통 속도</td>
-                        </tr>
-                        <tr>
-                            <td><strong>450~479</strong></td>
-                            <td>빠른 말하기 or 쉼이 짧은 말하기</td>
-                        </tr>
-                        <tr>
-                            <td><strong>480~</strong></td>
-                            <td>빠른 말하기 and 쉼이 짧은 말하기</td>
-                        </tr>
-                    </table>
-                    <p>
-                        * 매우 천천히 설명하는 발표는 330 CPM까지도 내려갑니다.
-                    </p>
-                </div>
-                <!-- CPM 정밀측정 모드 -->
-                <div class="customizeContainer">
-                    <div class="radioBox">
-                        <input
-                            type="radio"
-                            name="checking"
-                            id="customizeRadio"
-                            value="customize"
-                        />
-                        <label for="customizeRadio">CPM 정밀측정 모드</label>
-                    </div>
-                    <p class="paragraph">
-                        1. 스톱워치를 이용하여 <strong>20초 동안</strong> 자신의
-                        속도대로 읽습니다.<br />
-                        2. <strong>읽은 만큼</strong> 아래에 입력하면, 전체
-                        텍스트의 PT Time을 계산합니다.<br />
-                        3. <strong>PPT</strong>가 있다면, 장수와 전환간의 쉼,
-                        자료 감상 시간을 입력해주세요.<br />
-                        4. 영어가 포함되면 부정확할 수 있으니, 되도록
-                        <strong>한국어</strong>로 바꾸어주세요.<br />
-                    </p>
-                    <div class="box2">
-                        <div class="stopWatch">
-                            <p>Stop Watch</p>
-                            <span id="postTestMin">00</span
-                            ><!-- 분 -->
-                            <span>:</span>
-                            <span id="postTestSec">00</span
-                            ><!--초-->
-                            <span>.</span>
-                            <span id="postTestMilisec">00</span
-                            ><!--밀리초-->
-                            <!-- 밀리초는 작고, 회색깔로 만들자. -->
-                            <div>
-                                <button type="button" id="testStartBtn">
-                                    START</button
-                                ><!--시작/재시작/기록 버튼-->
-                                <button type="button" id="testStopBtn">
-                                    STOP</button
-                                ><!--스톱 버튼-->
-                            </div>
-                        </div>
-                        <div class="ppt">
-                            <div>
-                                PPT 수 :&nbsp;&nbsp;<input
-                                    type="number"
-                                    class="numberOfPPT"
-                                    value="0"
-                                    min="0"
-                                />&nbsp;장
-                            </div>
-                            <div>
-                                PPT 사이의 쉼 :&nbsp;&nbsp;<input
-                                    type="number"
-                                    class="termOfPPT"
-                                    value="1"
-                                    min="0"
-                                />&nbsp;초
-                            </div>
-                            <div>
-                                자료 감상 시간 :&nbsp;&nbsp;<input
-                                    type="number"
-                                    class="materialTime"
-                                    value="0"
-                                    min="0"
-                                />&nbsp;초
-                            </div>
-                        </div>
-                        <div>
-                            <textarea
-                                placeholder='20초간 읽은 텍스트를 "정확히" 넣어주세요.'
-                                class="textInput2"
-                            ></textarea>
-                        </div>
-                    </div>
-                </div>
+          <!-- <br/>(스크롤하여 속도를 조절해주세요.) -->
+          <div class="box1">
+            <p>Slow Fast</p>
+            <input
+              type="range"
+              min="310"
+              max="550"
+              value="430"
+              step="10"
+              class="slider"
+              id="myRange"
+              list="tickmarks"
+            />
+            <p class="cpm">430 CPM (Characters Per Minute)</p>
+          </div>
+          <table class="cpmText">
+            <tr>
+              <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>~390</strong>
+              </td>
+              <td>느린 말하기 and 쉼이 긴 말하기</td>
+            </tr>
+            <tr>
+              <td><strong>390~419</strong></td>
+              <td>느린 말하기 or 쉼이긴 말하기</td>
+            </tr>
+            <tr>
+              <td><strong>420~449</strong></td>
+              <td>보통 속도</td>
+            </tr>
+            <tr>
+              <td><strong>450~479</strong></td>
+              <td>빠른 말하기 or 쉼이 짧은 말하기</td>
+            </tr>
+            <tr>
+              <td><strong>480~</strong></td>
+              <td>빠른 말하기 and 쉼이 짧은 말하기</td>
+            </tr>
+          </table>
+          <p>* 매우 천천히 설명하는 발표는 330 CPM까지도 내려갑니다.</p>
+        </div>
+        <!-- CPM 정밀측정 모드 -->
+        <div class="customizeContainer">
+          <div class="radioBox">
+            <input
+              type="radio"
+              name="checking"
+              id="customizeRadio"
+              value="customize"
+            />
+            <label for="customizeRadio">CPM 정밀측정 모드</label>
+          </div>
+          <p class="paragraph">
+            1. 스톱워치를 이용하여 <strong>20초 동안</strong> 자신의 속도대로
+            읽습니다.<br />
+            2. <strong>읽은 만큼</strong> 아래에 입력하면, 전체 텍스트의 PT
+            Time을 계산합니다.<br />
+            3. <strong>PPT</strong>가 있다면, 장수와 전환간의 쉼, 자료 감상
+            시간을 입력해주세요.<br />
+            4. 영어가 포함되면 부정확할 수 있으니, 되도록
+            <strong>한국어</strong>로 바꾸어주세요.<br />
+          </p>
+          <div class="box2">
+            <div class="stopWatch">
+              <p>Stop Watch</p>
+              <span id="postTestMin">00</span
+              ><!-- 분 -->
+              <span>:</span>
+              <span id="postTestSec">00</span
+              ><!--초-->
+              <span>.</span>
+              <span id="postTestMilisec">00</span
+              ><!--밀리초-->
+              <!-- 밀리초는 작고, 회색깔로 만들자. -->
+              <div>
+                <button type="button" id="testStartBtn">START</button
+                ><!--시작/재시작/기록 버튼-->
+                <button type="button" id="testStopBtn">STOP</button
+                ><!--스톱 버튼-->
+              </div>
             </div>
-        </section>
-        <!-- contact -->
-        <section id="contact">
-            <p class="subtitle">Contact</p>
-            <p class="description">
-                2021.03.18. Modified<br />
-                불편한 점이 있다면 아래 SNS로 연락주시면 감사하겠습니다.
-            </p>
-            <div class="icons">
-                <a href="https://github.com/euijinkk" target="_blank">
-                    <img src="imgs/github2.png" alt="" />
-                </a>
-                <!-- <a href="https://www.instagram.com/sisyphe_philo/" target="_blank">
+            <div class="ppt">
+              <div>
+                PPT 수 :&nbsp;&nbsp;<input
+                  type="number"
+                  class="numberOfPPT"
+                  value="0"
+                  min="0"
+                />&nbsp;장
+              </div>
+              <div>
+                PPT 사이의 쉼 :&nbsp;&nbsp;<input
+                  type="number"
+                  class="termOfPPT"
+                  value="1"
+                  min="0"
+                />&nbsp;초
+              </div>
+              <div>
+                자료 감상 시간 :&nbsp;&nbsp;<input
+                  type="number"
+                  class="materialTime"
+                  value="0"
+                  min="0"
+                />&nbsp;초
+              </div>
+            </div>
+            <div>
+              <textarea
+                placeholder='20초간 읽은 텍스트를 "정확히" 넣어주세요.'
+                class="textInput2"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact -->
+    <section id="contact">
+      <p class="subtitle">Contact</p>
+      <p class="description">
+        2021.03.18. Modified<br />
+        불편한 점이 있다면 아래 SNS로 연락주시면 감사하겠습니다.
+      </p>
+      <div class="icons">
+        <a href="https://github.com/euijinkk" target="_blank">
+          <img src="imgs/github2.png" alt="" />
+        </a>
+        <!-- <a href="https://www.instagram.com/sisyphe_philo/" target="_blank">
                 <img src="imgs/instagram3.png" alt="">
             </a> -->
-                <a href="https://blog.naver.com/gytks4" target="_blank">
-                    <img src="imgs/naverBlog.png" alt="" />
-                </a>
-            </div>
-            <p class="email">euijinkk97@gmail.com</p>
-            <p class="copyright">
-                © 2021 https://presentationtime.netlify.app. All rights
-                reserved.
-            </p>
-        </section>
-    </body>
+        <a href="https://blog.naver.com/gytks4" target="_blank">
+          <img src="imgs/naverBlog.png" alt="" />
+        </a>
+      </div>
+      <p class="email">euijinkk97@gmail.com</p>
+      <p class="copyright">
+        © 2021 https://presentationtime.netlify.app. All rights reserved.
+      </p>
+    </section>
+    <div class="modal__bg">
+      <div class="modal__body">
+        <p class="modal__text">사이트가 리뉴얼되었습니다.</p>
+        <div class="modal__btns">
+          <a class="modal__link" href="https://www.speechtime.co.kr/">
+            <button class="modal__link--btn">바로 가기</button>
+          </a>
+          <button class="modal__link--close">닫기</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
