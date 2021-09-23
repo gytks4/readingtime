@@ -613,6 +613,10 @@ label {
   .email {
     margin-top: 0px;
   }
+
+  .modal__body {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 524px) {
